@@ -5,6 +5,8 @@ import About from '../views/About.vue'
 import Profile from '../views/User/Profile.vue'
 import SignIn from '../views/User/SignIn.vue'
 import SignUp from '../views/User/SignUp.vue'
+import ChatBox from '../views/User/ChatBox.vue'
+
 
 Vue.use(VueRouter)
 
@@ -33,6 +35,11 @@ const routes = [
     path: '/signup',
     name: 'SignUp',
     component: SignUp
+  },
+  {
+    path: '/chatbox',
+    name: 'ChatBox',
+    component: ChatBox
   },
   {
     path: '/about',

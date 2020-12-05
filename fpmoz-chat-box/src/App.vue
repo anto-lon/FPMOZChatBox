@@ -48,14 +48,7 @@
       color="cyan lighten-1"
       dark
       elevate-on-scroll
-      src="@/assets/navbarPhoto.png"
     >
-      <template v-slot:img="{ props }">
-        <v-img
-          v-bind="props"
-          gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
-        ></v-img>
-      </template>
 
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
@@ -74,11 +67,13 @@
     data: () => ({ 
       drawer: null ,
       items: [
-          { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/ ' },
-          { title: 'Profile', icon: 'mdi-image', to: '/profile' },
-          { title: 'Sign in', icon: 'mdi-help-box', to: '/signin' },
-          { title: 'Sign up', icon: 'mdi-help-box', to: '/signup' },
-          { title: 'About', icon: 'mdi-help-box', to: '/about' },
+          { title: 'Home', icon: 'mdi-home', to: '/' },
+          { title: 'Profile', icon: 'mdi-account', to: '/profile' },
+          { title: 'ChatBox', icon: 'mdi-forum', to: '/chatbox' },
+          { title: 'Sign in', icon: 'mdi-login', to: '/signin' },
+          { title: 'Sign up', icon: 'mdi-account-plus', to: '/signup' },
+          { title: 'About', icon: 'mdi-information-outline', to: '/about' },
+          { title: 'Sign out', icon: 'mdi-logout', to: '/' },
         ],
       }),
   }
