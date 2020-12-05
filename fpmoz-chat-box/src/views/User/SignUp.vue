@@ -1,0 +1,5 @@
+<template>
+  <div class="home">
+    <p>This is Sign up page </p>
+  </div>
+</template>
