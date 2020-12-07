@@ -55,10 +55,11 @@
       <v-toolbar-title>FPMOZChatBox</v-toolbar-title>
 
       <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-logout <span>Signout</span></v-icon>
-      </v-btn>
+      <div class="signOutbtn">
+        <v-btn icon>
+          <v-icon>mdi-logout </v-icon><span>Signout</span>
+        </v-btn>
+      </div>
 
     </v-app-bar>
 
@@ -83,3 +84,10 @@
       }),
   }
 </script>
+
+<style>
+.signOutbtn{
+  padding-right:15px ;
+}
+  
+</style>
