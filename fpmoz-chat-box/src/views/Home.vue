@@ -37,7 +37,7 @@
         <v-container>  
           <v-layout row wrap >
             <v-flex class="text-center">
-              <h3 class="text-h3 font-weight-thin mb-4 white--text "  > Posjetite stranice FPMOZ-a i SUM-a</h3>
+              <h3 class="text-h3  font-weight-thin mb-4 white--text "  > Posjetite stranice FPMOZ-a i SUM-a</h3>
             </v-flex>
           </v-layout>
 
@@ -99,7 +99,7 @@
       <v-container>
         <v-layout row wrap>
           <v-flex class="text-center">
-            <h3 class="text-h3 font-weight-thin mb-4  " >Osobe koje su zaslužne za ovaj projekat , i više infomrmacije o projektu na sljedećem linku <br></h3>
+            <h3 class=" text-h3 font-weight-thin mb-4  " >Osobe koje su zaslužne za ovaj projekat , i više infomrmacije o projektu na sljedećem linku <br></h3>
             <v-btn class="ma-2" rounded outlined color="cyan lighten-1">
               <a style="text-decoration:none;color:cyan lighten-1;" href="/#/about" ><v-icon>mdi-information-outline</v-icon> About</a>
             </v-btn>
