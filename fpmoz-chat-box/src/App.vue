@@ -54,6 +54,12 @@
 
       <v-toolbar-title>FPMOZChatBox</v-toolbar-title>
 
+      <v-spacer></v-spacer>
+
+      <v-btn icon>
+        <v-icon>mdi-logout <span>Signout</span></v-icon>
+      </v-btn>
+
     </v-app-bar>
 
     <v-main>
@@ -73,7 +79,6 @@
           { title: 'Sign in', icon: 'mdi-login', to: '/signin' },
           { title: 'Sign up', icon: 'mdi-account-plus', to: '/signup' },
           { title: 'About', icon: 'mdi-information-outline', to: '/about' },
-          { title: 'Sign out', icon: 'mdi-logout', to: '/' },
         ],
       }),
   }
