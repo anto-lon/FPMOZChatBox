@@ -50,9 +50,16 @@
       elevate-on-scroll
     >
 
-      <v-app-bar-nav-icon @click.native.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>FPMOZChatBox</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+      <div class="signOutbtn">
+        <v-btn icon>
+          <v-icon>mdi-logout </v-icon><span>Signout</span>
+        </v-btn>
+      </div>
 
     </v-app-bar>
 
@@ -79,3 +86,10 @@
       }),
   }
 </script>
+
+<style>
+.signOutbtn{
+  padding-right:15px ;
+}
+  
+</style>
