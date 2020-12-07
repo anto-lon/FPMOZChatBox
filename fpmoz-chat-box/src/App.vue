@@ -1,8 +1,8 @@
 <template>
   <v-app id="inspire">
     <v-navigation-drawer 
-    app
-    v-model="drawer"
+    app 
+    temporary v-model="drawer"
     class="cyan lighten-1"
     dark
     
@@ -50,7 +50,7 @@
       elevate-on-scroll
     >
 
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click.native.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>FPMOZChatBox</v-toolbar-title>
 
@@ -65,7 +65,7 @@
 <script>
   export default {
     data: () => ({ 
-      drawer: null ,
+      drawer: false ,
       items: [
           { title: 'Home', icon: 'mdi-home', to: '/' },
           { title: 'Profile', icon: 'mdi-account', to: '/profile' },
@@ -74,6 +74,7 @@
           { title: 'Sign up', icon: 'mdi-account-plus', to: '/signup' },
           { title: 'About', icon: 'mdi-information-outline', to: '/about' },
           { title: 'Sign out', icon: 'mdi-logout', to: '/' },
+           { title: 'Calendar', icon: 'mdi-calendar', to: '/calendar' },
         ],
       }),
   }

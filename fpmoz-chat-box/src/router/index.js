@@ -6,6 +6,8 @@ import Profile from '../views/User/Profile.vue'
 import SignIn from '../views/User/SignIn.vue'
 import SignUp from '../views/User/SignUp.vue'
 import ChatBox from '../views/User/ChatBox.vue'
+import Calendar from '../views/User/Calendar.vue'
+
 
 
 Vue.use(VueRouter)
@@ -40,6 +42,11 @@ const routes = [
     path: '/chatbox',
     name: 'ChatBox',
     component: ChatBox
+  },
+  {
+    path: '/Calendar',
+    name: 'Calendar',
+    component: Calendar
   },
   {
     path: '/about',
