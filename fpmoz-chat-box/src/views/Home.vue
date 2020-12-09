@@ -24,7 +24,7 @@
           <v-flex class="text-center">
             <h3 class="text-h3 font-weight-thin mb-4  " >Ovdje možete preuzeti našu viziju <br></h3>
             <v-btn class="ma-2" rounded outlined color="cyan lighten-1">
-              <a style="text-decoration:none;color:cyan lighten-1;"href="https://www.scribd.com/document/483819580/Fpmoz-Infotmatika-2020-Fpmoz-Chatbox" target="_blank">Vizija</a>
+              <a style="text-decoration:none;color:cyan lighten-1;" href="https://www.scribd.com/document/483819580/Fpmoz-Infotmatika-2020-Fpmoz-Chatbox" target="_blank">Vizija</a>
             </v-btn>
           </v-flex>
         </v-layout>
@@ -66,7 +66,7 @@
             </v-flex>
 
             <v-flex  xs12 sm12 md4 class="text-center text-sm-center">
-                <img src="https://i.ibb.co/PMRVRV7/logo.png" height="100px"alt="">
+                <img src="https://i.ibb.co/PMRVRV7/logo.png" height="100px" alt="">
             </v-flex>
 
             <v-flex  xs12 sm12 md4 class= "text-center text-sm-center" >
@@ -106,9 +106,8 @@
           </v-flex>
         </v-layout>
       </v-container>
-      <div class="blueLine">
-
-      </div>
+      
+      <div class="blueLine"></div>
     
       
     
@@ -144,11 +143,7 @@
 .vizija{
   padding-top:20px ;
 }
-hr {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-}
+
 .visitUs{
   background-color:#26c6da;
   -webkit-box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.43); 

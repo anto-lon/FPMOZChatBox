@@ -48,48 +48,130 @@
               src="@/assets/html.png"
               width="180px"
               class="text-center ma-1"
-              ></img>
+              >
 
               <img
               src="@/assets/css.png"
               width="180px"
               class="text-center ma-1"
-              ></img>
+              >
 
               <img
               src="@/assets/firebase.png"
               width="180px"
               class="text-center ma-1"
-              ></img>
+              >
 
               <img
               src="@/assets/vue.png"
               width="180px"
               class="text-center ima-1"
-              ></img>
+              >
 
               <img
               src="@/assets/vuetfy.png"
               width="180px"
               class="text-center ma-1"
-              ></img>
+              >
 
               <img
               src="@/assets/node.png"
               width="180px"
               class="text-center ma-1"
-              ></img>
+              >
 
             </v-flex>
           </v-layout>
         </v-container>  
       </v-card> 
     </div>
+    <div class="naslov">
+      <v-container>
+        <v-layout row wrap>
+          <v-flex class="text-center">
+            <h3 class="text-h3 font-weight-thin mb-4  " >Osobne zaslužne za razvoj aplikacije <br></h3>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </div>
+
+    <div class="infoCards text-center">
+      <v-container>
+        <!-- Hrvoje card -->
+        <v-layout row wrap >
+          <v-flex xs12 sm12 md6 class="text-center text-sm-center mt-2">
+            <v-card
+              class="mx-auto"
+              max-width="400"
+            >
+              <v-img
+                class="white--text align-end"
+                height="250px"
+                src="https://i.ibb.co/FDq9ZNm/hrvoje.png"
+              >
+                <v-card-title>Hrvoje Grubišić</v-card-title>
+              </v-img>
+
+              <v-card-subtitle class="pb-0">
+                Student 3. godine FPMOZ-a
+              </v-card-subtitle>
+
+              <v-card-text class="text--primary">
+                <div>Smjer: Informatika</div>
+
+                <div>Kontakt: hrvoje.grubisic@fpmoz.sum.ba </div>
+              </v-card-text>
+
+            </v-card>     
+            
+          </v-flex>
+          
+          <v-flex xs12 sm12 md6 class="text-center text-sm-center mt-2">
+            <v-card
+              class="mx-auto"
+              max-width="400"
+            >
+              <v-img
+                class="white--text align-end"
+                height="250px"
+                src="https://i.ibb.co/3Tg9cnh/antonio.png"
+              >
+                <v-card-title>Antonio Lončar</v-card-title>
+              </v-img>
+
+              <v-card-subtitle class="pb-0">
+                Student 3. godine FPMOZ-a
+              </v-card-subtitle>
+
+              <v-card-text class="text--primary">
+                <div>Smjer: Informatika</div>
+
+                <div>Kontakt: antonio.lončar@fpmoz.sum.ba </div>
+              </v-card-text>
+
+            </v-card>     
+            
+          </v-flex>
+        </v-layout>
+        <br>
+
+      </v-container>
+
+      
+    </div>
+
     
+    <div class="blueLine"></div>
   </div>
 </template>
 
 <style>
+.blueLine{
+  height: 15px;
+  background-color:#26c6da;
+  -webkit-box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.43); 
+  box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.43);  
+}
 @media screen and (max-width: 600px) {
   .photo img{
   height: 140px;

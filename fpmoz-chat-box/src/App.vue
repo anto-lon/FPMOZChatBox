@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <v-navigation-drawer 
     app 
-    temporary v-model="drawer"
+    v-model="drawer"
     class="cyan lighten-1"
     dark
     
@@ -57,7 +57,7 @@
       <v-spacer></v-spacer>
       <div class="signOutbtn">
         <v-btn icon>
-          <v-icon>mdi-logout </v-icon><span>Signout</span>
+          <v-icon>mdi-logout </v-icon><span>Sign out</span>
         </v-btn>
       </div>
 
@@ -72,7 +72,7 @@
 <script>
   export default {
     data: () => ({ 
-      drawer: false ,
+      drawer: null ,
       items: [
           { title: 'Home', icon: 'mdi-home', to: '/' },
           { title: 'Profile', icon: 'mdi-account', to: '/profile' },
@@ -80,7 +80,6 @@
           { title: 'Sign in', icon: 'mdi-login', to: '/signin' },
           { title: 'Sign up', icon: 'mdi-account-plus', to: '/signup' },
           { title: 'About', icon: 'mdi-information-outline', to: '/about' },
-          { title: 'Sign out', icon: 'mdi-logout', to: '/' },
            { title: 'Calendar', icon: 'mdi-calendar', to: '/calendar' },
         ],
       }),
