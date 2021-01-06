@@ -2,19 +2,17 @@
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-
-// Add the Firebase services that you want to use
 import "firebase/auth";
-import "firebase/firestore";
+
 
 // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyD4XO-w__YfWsa5dzjUvETrTFQjKgXBnwM",
-    authDomain: "chat-app-186bb.firebaseapp.com",
-    projectId: "chat-app-186bb",
-    storageBucket: "chat-app-186bb.appspot.com",
-    messagingSenderId: "882369530519",
-    appId: "1:882369530519:web:6e926765c140f6ad0477d2"
+    apiKey: "AIzaSyDKeW2uzY-bEuxPudOGHvzJof1tm-S0_W0",
+    authDomain: "chat-app-df101.firebaseapp.com",
+    projectId: "chat-app-df101",
+    storageBucket: "chat-app-df101.appspot.com",
+    messagingSenderId: "1076644266721",
+    appId: "1:1076644266721:web:65b3f96ab9d0e7b619ada0"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
