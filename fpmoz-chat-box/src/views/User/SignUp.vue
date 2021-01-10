@@ -90,7 +90,7 @@
 </template>
 
 <script>
-import firebase from "@/services/firebase"
+import {firebase, db} from "@/services/firebase";
 import Vue from 'vue';
 
 export default {

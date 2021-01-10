@@ -86,10 +86,10 @@
 
         </v-list-item>
         </div>
-  <!-- Chat Box -->
+  <!-- Chat Rooms -->
         <div v-if="store.currentUser">
         <v-list-item
-          to="/chatbox"
+          to="/chatrooms"
           link>
           
           <v-list-item-icon>
@@ -97,7 +97,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>ChatBox</v-list-item-title>
+            <v-list-item-title>Chat Room's</v-list-item-title>
           </v-list-item-content>
 
         </v-list-item>
@@ -151,7 +151,7 @@
       <v-toolbar-title>FPMOZChatBox</v-toolbar-title>
 
       <v-spacer></v-spacer>
-      <div class="signOutbtn" v-if="store.currentUser" >
+      <div class="mr-5" v-if="store.currentUser" >
         <v-btn icon v-on:click="signout()">
           <v-icon>mdi-logout </v-icon><span>Sign out</span>
         </v-btn>
@@ -167,28 +167,34 @@
 
 
 <script>
-import firebase from "@/services/firebase";
+import {firebase, db} from "@/services/firebase";
 import Vue from 'vue';
 import store from '@/store';
 import router from '@/router';
 
 firebase.auth().onAuthStateChanged(function(user) {
   const currentRoute = router.currentRoute;
-  //console.log("current rpoute", currentRoute)
+  console.log("current rpoute", currentRoute.name)
   if (user) {
     // User is signed in.
     console.log("+++", user.email);
     store.currentUser = user.email;
     if( !currentRoute.meta.needsUser){
-      router.push('/profile');
-    }
+      //router.replace('/profile');
+      if( currentRoute.name == "SignIn" || currentRoute.name == "SignUp"){
+        router.replace('/profile');
+      }else if(currentRoute.name == "Profile" || currentRoute.name == "ChatRooms" || currentRoute.name == "Calendar"){
+        router.push(currentRoute);
+      }
+    };
+    
+
   }else {
     // User is not signed in.
     console.log("No user");
     store.currentUser = null;
     if( currentRoute.meta.needsUser){
-      router.push('/signin');
-      router.replace(currentRoute);
+      router.replace('/');
     }
   }
 });
@@ -226,8 +232,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
 <style>
-.signOutbtn{
-  padding-right:15px ;
-}
+
   
 </style>

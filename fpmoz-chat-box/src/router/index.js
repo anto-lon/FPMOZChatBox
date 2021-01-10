@@ -5,10 +5,11 @@ import About from '../views/About.vue'
 import Profile from '../views/User/Profile.vue'
 import SignIn from '../views/User/SignIn.vue'
 import SignUp from '../views/User/SignUp.vue'
-import ChatBox from '../views/User/ChatBox.vue'
+import ChatRooms from '../views/User/ChatRooms.vue'
 import Calendar from '../views/User/Calendar.vue'
 import store from '../store.js'
-
+import Chat from '../components/Chat.vue'
+import AddRoom from '../components/AddRoom.vue'
 
 
 Vue.use(VueRouter)
@@ -43,9 +44,9 @@ const routes = [
     component: SignUp
   },
   {
-    path: '/chatbox',
-    name: 'ChatBox',
-    component: ChatBox,
+    path: '/chatrooms',
+    name: 'ChatRooms',
+    component: ChatRooms,
     meta: {
       needsUser: true
     }
@@ -54,6 +55,22 @@ const routes = [
     path: '/Calendar',
     name: 'Calendar',
     component: Calendar,
+    meta: {
+      needsUser: true
+    }
+  },
+  {
+    path: '/chat',
+    name: 'Chat',
+    component: Chat,
+    meta: {
+      needsUser: true
+    }
+  },
+   {
+    path: '/addroom',
+    name: 'AddRoom',
+    component: AddRoom,
     meta: {
       needsUser: true
     }

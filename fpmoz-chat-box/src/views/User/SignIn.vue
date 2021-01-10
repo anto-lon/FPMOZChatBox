@@ -55,7 +55,7 @@
 </div>
 </template>
 <script>
-import firebase from "@/services/firebase"
+import {firebase, db} from "@/services/firebase";
 import Vue from 'vue';
 
 export default {
@@ -92,6 +92,7 @@ export default {
               localStorage.setItem("college", userData.college);
               localStorage.setItem("FirebaseDocumentId", doc.id);
               localStorage.setItem("typeOfUser",userData.typeOfUser);
+              
               
             });
           });
