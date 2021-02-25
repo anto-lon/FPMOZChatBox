@@ -31,6 +31,7 @@
                       id="password"
                       v-model="password"
                       type="password"
+                      v-on:keyup.enter="signin"
                       required></v-text-field>
                   </v-flex>
                 </v-layout>
@@ -43,7 +44,10 @@
               <br>
                 <v-layout row wrap>
                   <v-flex class="text-center">
-                    <p class="text-p font-weight-500 mb-2  " >If you doesnt have account , you can make it <router-link to="/signup" class="text">here</router-link></p>
+                    <p class="text-p font-weight-500 mb-4 " >If you doesnt have account , you can make it <router-link to="/signup" class="text">here</router-link></p>
+                     <hr>
+                    <p class="text-p mt-4">Here you have our Admin test account <br>
+                     mail:admin@mail.com <br> pw:admin123</p>
                   </v-flex>
                 </v-layout>
             </v-container>
@@ -92,6 +96,7 @@ export default {
               localStorage.setItem("college", userData.college);
               localStorage.setItem("FirebaseDocumentId", doc.id);
               localStorage.setItem("typeOfUser",userData.typeOfUser);
+              
               
               
             });

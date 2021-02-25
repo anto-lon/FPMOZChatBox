@@ -6,10 +6,12 @@ import Profile from '../views/User/Profile.vue'
 import SignIn from '../views/User/SignIn.vue'
 import SignUp from '../views/User/SignUp.vue'
 import ChatRooms from '../views/User/ChatRooms.vue'
-import Calendar from '../views/User/Calendar.vue'
+import CreateEvent from '../views/User/CreateEvent.vue'
+import Forum from '../views/User/Forum.vue'
 import store from '../store.js'
 import Chat from '../components/Chat.vue'
 import AddRoom from '../components/AddRoom.vue'
+import firebase from 'firebase/app'
 
 
 Vue.use(VueRouter)
@@ -44,23 +46,33 @@ const routes = [
     component: SignUp
   },
   {
-    path: '/chatrooms',
+    path: '/chatrooms/:nickname',
     name: 'ChatRooms',
     component: ChatRooms,
     meta: {
-      needsUser: true
+      needsUser: true,
+     
     }
   },
   {
-    path: '/Calendar',
-    name: 'Calendar',
-    component: Calendar,
+    path: '/CreateEvent',
+    name: 'CreateEvent',
+    component: CreateEvent,
+    meta: {
+      needsUser: true,
+      needAdmin:true
+    }
+  },
+  {
+    path: '/Forum',
+    name: 'Forum',
+    component: Forum,
     meta: {
       needsUser: true
     }
   },
   {
-    path: '/chat',
+    path: '/chat/:nickname/:roomid/:roomname',
     name: 'Chat',
     component: Chat,
     meta: {
@@ -85,11 +97,22 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) =>{
   console.log("stara ruta je ", from.name, "nova ruta je", to.name,"i korisnik je", store.currentUser)
   const noUser = (store.currentUser === null);
-
+  const currentUser = firebase.auth().currentUser;
+  const needAdmin = to.matched.some(record => record.meta.needAdmin)
   if (noUser && to.meta.needsUser){
     next('signin');
-    
-  }else{
+  }else if(needAdmin && currentUser){
+    firebase.firestore().collection("users").where("id", "==", currentUser.uid).get().then((querySnapshot)=>{
+      querySnapshot.forEach((doc)=>{
+        if(doc.data().typeOfUser == "Admin"){
+          next()
+        }else{
+          next('/')
+        }
+      })
+    })
+  }
+  else{
     next();
   }
 });

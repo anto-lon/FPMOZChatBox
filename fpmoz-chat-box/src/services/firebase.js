@@ -1,8 +1,19 @@
-//import * as firebase from 'firebase';
+//import * as firebase from 'firebase/app';
 
-import firebase from 'firebase/app';
-import 'firebase/firestore';
+// Firebase App (the core Firebase SDK) is always required and
+// must be listed before other Firebase SDKs
+import firebase from "firebase/app";
+
+// Add the Firebase services that you want to use
 import "firebase/auth";
+import "firebase/firestore";
+import "firebase/database";
+//import '@firebase/firestore/dist/esm/index';
+
+//var firebase = require('firebase/app');
+//require('firebase/auth');
+//require('firebase/database');
+//require("firebase/firestore");
 
 
 // Your web app's Firebase configuration

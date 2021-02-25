@@ -2,6 +2,7 @@
   <v-app id="inspire">
     <v-navigation-drawer 
     app 
+    fixed
     v-model="drawer"
     class="cyan lighten-1"
     dark>
@@ -89,7 +90,7 @@
   <!-- Chat Rooms -->
         <div v-if="store.currentUser">
         <v-list-item
-          to="/chatrooms"
+          v-on:click='pushToChatRooms()'
           link>
           
           <v-list-item-icon>
@@ -102,18 +103,34 @@
 
         </v-list-item>
         </div>
-  <!-- Calendar -->
-        <div v-if="store.currentUser">
+  <!-- Create Event -->
+        <div v-if="store.currentUser && typeOfUser == 'Admin'">
         <v-list-item
-          to="/calendar"
+          to="/CreateEvent"
           link>
           
           <v-list-item-icon>
             <v-icon>mdi-calendar</v-icon>
           </v-list-item-icon>
 
+          <v-list-item-content >
+            <v-list-item-title>Create Event</v-list-item-title>
+          </v-list-item-content>
+
+        </v-list-item>
+        </div>
+        <!--Forum -->
+        <div v-if="store.currentUser">
+        <v-list-item
+          to="/Forum"
+          link>
+          
+          <v-list-item-icon>
+            <v-icon>mdi-bulletin-board</v-icon>
+          </v-list-item-icon>
+
           <v-list-item-content>
-            <v-list-item-title>Calenadar</v-list-item-title>
+            <v-list-item-title>Forum</v-list-item-title>
           </v-list-item-content>
 
         </v-list-item>
@@ -174,7 +191,7 @@ import router from '@/router';
 
 firebase.auth().onAuthStateChanged(function(user) {
   const currentRoute = router.currentRoute;
-  console.log("current rpoute", currentRoute.name)
+  console.log("current route", currentRoute.name)
   if (user) {
     // User is signed in.
     console.log("+++", user.email);
@@ -193,6 +210,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     // User is not signed in.
     console.log("No user");
     store.currentUser = null;
+    store.nickname = null;
     if( currentRoute.meta.needsUser){
       router.replace('/');
     }
@@ -202,7 +220,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   export default {
     data(){ 
       return {
-        drawer:null,
+        drawer: false,
         store,
         firebaseDocId: localStorage.getItem("FIrebaseDocumentId"),
         userId:localStorage.getItem("id"),
@@ -215,15 +233,29 @@ firebase.auth().onAuthStateChanged(function(user) {
         description:localStorage.hasOwnProperty("description")? localStorage.getItem("description")
         :"",
         email:localStorage.hasOwnProperty("email")? localStorage.getItem("email")
-        :"",  
+        :"",
+        typeOfUser:localStorage.hasOwnProperty("typeOfUser")? localStorage.getItem("typeOfUser")
+        :"",
+        nickname: '', 
         }
       },
+      mounted(){
+        this.nickname = this.firstName + this.lastName;
+        console.log("niknejm", this.nickname)
+        
+    },
       methods:{
         signout(){
           firebase.auth().signOut().then(()=>{
             this.$router.push('/signin');
           });
         },
+        pushToChatRooms(){
+          	router.push({
+              name: 'ChatRooms',
+              params: {nickname: this.nickname}
+            })
+        }
       },
 
   }

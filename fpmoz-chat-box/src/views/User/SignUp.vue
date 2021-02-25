@@ -112,7 +112,7 @@ export default {
       const college = this.college;
       const email = this.email;
       const password = this.password;
-      const typeOfUser = "Studnet"
+      const typeOfUser = "Student"
       auth.createUserWithEmailAndPassword(email, password).then(async res => {
         console.log("res", res);
 

@@ -5,7 +5,7 @@
       <v-parallax
         dark
         src="https://i.ibb.co/V302h11/paralla.png"
-        id="parallax-img"
+        
       >
         <v-row align="center" justify="center">
           <v-col class="text-center" cols="12">

@@ -1,5 +1,5 @@
 <template>
-    <div >
+    <div>
         <div class=" cyan lighten-1" >
             <v-flex  xs12 sm12 md12 class="text-center text-sm-center pa-4">
                 <img src="https://i.ibb.co/PMRVRV7/logo.png" height="120px" alt="">
@@ -29,7 +29,7 @@
                     <div>Vrsta korisnika : {{typeOfUser}}</div>
                 </div>
                 </v-card-text>
-                <!-- Ovo je button komponenta
+               
                 <div> 
                     <div>
                         <v-row justify="center">
@@ -111,19 +111,25 @@
                             Close
                         </v-btn>
                         <v-btn
-                            color="blue darken-1"
+                            color="blue darken-1 "
                             text
                             @click="dialog = false"
                         >
                             Save
                         </v-btn>
+                        <br>
                         </v-card-actions>
+                        <div>
+                            <p class="text-right pr-5 mt-3 "><span class="colorText">*Izmjena profila trenutačno nije u funkcij</span></p>
+                        </div>
+                        <br> 
                     </v-card>
                     </v-dialog>
                 </v-row>
+                <br>
                     </div>
                     <br>
-                </div> -->
+                </div> 
             </v-card>
         </div>
     </div>
@@ -157,7 +163,9 @@ export default {
             photoURL:localStorage.getItem("photoURL"),
             newPhoto:null,
             dialog: false,
-            photo: "https://www.w3schools.com/howto/img_avatar.png"
+            photo: "https://www.w3schools.com/howto/img_avatar.png",
+            newName:null,
+            newLastName:null,
         }
     }
 }
@@ -174,6 +182,9 @@ export default {
     box-shadow: -1px 1px 42px -5px rgba(0,0,0,0.69);
     -webkit-box-shadow: -1px 1px 42px -5px rgba(0,0,0,0.69);
     -moz-box-shadow: -1px 1px 42px -5px rgba(0,0,0,0.69);
+}
+.colorText{
+    color:#B0BEC5;
 }
 
 
