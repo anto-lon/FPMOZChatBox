@@ -141,7 +141,7 @@
   box-shadow: 0px 1px 21px -5px rgba(0,0,0,0.83);
 }
 .vizija{
-  padding-top:20px ;
+  padding-top:20px;
 }
 
 .visitUs{
