@@ -107,7 +107,7 @@
         </v-layout>
       </v-container>
       
-      <div class="blueLine"></div>
+      <div class="blueLine"> </div>
     
       
     
